@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -13,9 +14,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'css-loader'
-        ],
+        use: ExtractTextPlugin.extract({ //takes the result of style-loader and creates the file style.css and injects it into the html file
+          fallback: 'style-loader', //inline the css into <head> section
+          use: [
+              'css-loader', //returns a javascript string of your css
+          ],
+      }),
       },
       {
         test: /\.js$/,
@@ -38,6 +42,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new ExtractTextPlugin('[name].css'),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
@@ -53,7 +58,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true,
+    noInfo: false,
     overlay: true
   },
   performance: {

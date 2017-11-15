@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>rev_slider_webpack</title>
-  </head>
-  <body>
-    <div class="rev_slider_wrapper">
-      
-          <!-- the ID here will be used in the inline JavaScript below to initialize the slider -->
-          <div id="rev_slider_1" class="rev_slider" data-version="5.4.5" style="display:none">
-      
-              <ul>
-      
-                  <!-- MINIMUM SLIDE STRUCTURE -->
-                  <li data-transition="fade">
-      
-                      <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                      <img src="src/assets/vendor/revolution_slider/assets/images/notgeneric_bg3.jpg" alt="Sky" class="rev-slidebg">
-      
-                  </li>
-      
-                  <!-- MINIMUM SLIDE STRUCTURE -->
-                  <li data-transition="fade">
-      
-                      <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                      <img src="src/assets/vendor/revolution_slider/assets/images/notgeneric_bg5.jpg" alt="Ocean" class="rev-slidebg">
-      
-                  </li>
-              </ul>
-      
-          </div>
-      
-      </div>
+    <link rel="stylesheet" type="text/css" href="dist/main.css">
+</head>
+
+<body>
+    <div class="container" style="width:1400px;height:800px;position:relative;">
+        <div class="rev_slider_wrapper">
+
+            <!-- the ID here will be used in the inline JavaScript below to initialize the slider -->
+            <div id="rev_slider_1" class="rev_slider" data-version="5.4.5" style="display:none">
+
+                <ul>
+
+                    <!-- MINIMUM SLIDE STRUCTURE -->
+                    <li data-transition="fade">
+
+                        <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+
+                        <img src="src/assets/vendor/revolution_slider/assets/images/notgeneric_bg3.jpg" alt="Ocean" class="rev-slidebg" data-bgposition="center center"
+                            data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                        <div class="rs-background-video-layer" data-videomp4="src/assets/vendor/revolution_slider/assets/videos/Broadway.mp4" data-autoplay="on"
+                            data-videopreload="auto" data-volume="100" data-forcerewind="on" data-nextslideatend="true" data-videoloop="loopandnoslidestop"></div>
+
+
+                    </li>
+
+                    <!-- MINIMUM SLIDE STRUCTURE -->
+                    <li data-transition="fade">
+
+                        <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                        <img src="src/assets/vendor/revolution_slider/assets/images/notgeneric_bg5.jpg" alt="Ocean" class="rev-slidebg">
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
     <script src="/dist/build.js"></script>
-  </body>
+</body>
+
 </html>
